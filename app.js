@@ -53,7 +53,7 @@ app.use("/admin", admin);
 //mongodb://localhost/blog mongo link
 //mongodb://gustavo3848:rerogu361@mongo_sistema:27017/sistema
 //OUTROS
-const port = 3000;
+const port = 3166;
 app.listen(port, function () {
     console.log("Servidor rodando...")
 })
