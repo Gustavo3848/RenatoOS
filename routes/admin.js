@@ -17,7 +17,7 @@ const pdf = require("html-pdf");
 const e = require("express");
 const { compile } = require("handlebars");
 var br_format = require('intl')
-const aux = require('../confi/aux');
+const aux = require('../confi/_aux');
 
 //PAGAR MUITOS
 router.post("/pagamentos", function (req, res) {
