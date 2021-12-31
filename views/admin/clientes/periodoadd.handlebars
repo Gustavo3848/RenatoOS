@@ -1,0 +1,14 @@
+<div class="card">
+    <div class="card-body">
+    <form action="/admin/periodoNovo" method="POST">
+    <input type="hidden" name="idCliente" value="{{cliente._id}}">
+    <label for="periodo">Periodo:</label>
+        <input type="time" id="periodo1" name="periodo1" class="form-control mb-2"  required="true" autocomplete="off"/>
+        <p>Até</p>
+        <input type="time" name="periodo2" id="periodo2" class="form-control mt-2"  autocomplete="off"required="true"/>
+    <label for="valorHora" class="mt-2">Valor Hora:</label>
+        <input type="text" id="valorHora" name="valorHora" placeholder="0.00" class="form-control" autocomplete="off" value="" required="true"/>
+    <button type="submit" class=" btn btn-success mt-4">Adicionar</button>    
+</form>
+</div>
+</div>
