@@ -1283,7 +1283,7 @@ router.get("/download/:numeroOC", function (req, res) {
     res.type('pdf')
     function download() {
         res.download("./pdfs/orcamentos/" + req.params.numeroOC + ".pdf")
-        deletar
+        //deletar
     }
     function deletar() {
         fs.unlink("./pdfs/orcamentos/" + req.params.numeroOC + ".pdf", function (err) {
@@ -1294,7 +1294,7 @@ router.get("/download/:numeroOC", function (req, res) {
         })
     }
     setTimeout(download, 3000);
-    setTimeout(deletar, 4500);
+    //setTimeout(deletar, 4500);
 })
 //GERAR ORDEM INTERNA
 router.get("/pdfordeminterna/:id", function (req, res) {
