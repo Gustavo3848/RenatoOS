@@ -1259,7 +1259,7 @@ router.get("/pdforcamento/:id/:valor", function (req, res) {
                 var valor = req.params.valor
                 valor = br_format.NumberFormat('pt-br',{ style: 'currency', currency: 'BRL' }).format(valor)
                 res.render("pdfs/orcamentoTT", { layout: "other", orcamento: orcamento, servicos: servicos, materiais: materiais, total: valor }, function (erro, html) {
-                    pdf.create(html, {}).toFile("./pdfs/orçamentos/" + numeroOC + ".pdf", (function (erro, res) {
+                    pdf.create(html, {}).toFile("./pdfs/orcamentos/" + numeroOC + ".pdf", (function (erro, res) {
                         if (erro) {
                             console.log(erro)
                         } else {
@@ -1282,11 +1282,11 @@ router.get("/download/:numeroOC", function (req, res) {
 
     res.type('pdf')
     function download() {
-        res.download("./pdfs/orçamentos/" + req.params.numeroOC + ".pdf")
+        res.download("./pdfs/orcamentos/" + req.params.numeroOC + ".pdf")
         deletar
     }
     function deletar() {
-        fs.unlink("./pdfs/orçamentos/" + req.params.numeroOC + ".pdf", function (err) {
+        fs.unlink("./pdfs/orcamentos/" + req.params.numeroOC + ".pdf", function (err) {
             if (err) {
                 console.log(err)
             }
