@@ -122,7 +122,7 @@ router.post("/editar/os/:id", function (req, res) {
     console.log(dia)
     if (dia == undefined) {
         if (req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
-            OS.findByIdAndUpdate(req.params.id, { equipamento: req.body.equipamento.toUpperCase(), setor: req.body.setor.toUpperCase(), cCusto: req.body.cCusto.toUpperCase(), codCcusto: req.body.codCcusto.toUpperCase(), solicitante: req.body.solicitante.toUpperCase(), refCliente: req.body.refCliente.toUpperCase(), cliente: req.body.cliente, diaSemana: req.body.diaSemana.toUpperCase() }).then(function () {
+            OS.findByIdAndUpdate(req.params.id, { equipamento: req.body.equipamento.toUpperCase(), setor: req.body.setor.toUpperCase(), cCusto: req.body.cCusto.toUpperCase(), codCcusto: req.body.codCcusto.toUpperCase(), solicitante: req.body.solicitante.toUpperCase(), refCliente: req.body.refCliente.toUpperCase(), cliente: req.body.cliente, diaSemana: req.body.diaSemana.toUpperCase(), empresa: req.body.empresa.toUpperCase() }).then(function () {
                 res.redirect("/admin/orcamentos")
             }).catch(function (err) {
                 console.log(err)
@@ -134,7 +134,7 @@ router.post("/editar/os/:id", function (req, res) {
         }
     } else {
         if (req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
-            OS.findByIdAndUpdate(req.params.id, { equipamento: req.body.equipamento.toUpperCase(), setor: req.body.setor.toUpperCase(), cCusto: req.body.cCusto.toUpperCase(), codCcusto: req.body.codCcusto.toUpperCase(), solicitante: req.body.solicitante.toUpperCase(), refCliente: req.body.refCliente.toUpperCase(), cliente: req.body.cliente, diaSemana: req.body.diaSemana.toUpperCase(), dataData: req.body.novaData, data: dataFormatada }).then(function () {
+            OS.findByIdAndUpdate(req.params.id, { equipamento: req.body.equipamento.toUpperCase(), setor: req.body.setor.toUpperCase(), cCusto: req.body.cCusto.toUpperCase(), codCcusto: req.body.codCcusto.toUpperCase(), solicitante: req.body.solicitante.toUpperCase(), refCliente: req.body.refCliente.toUpperCase(), cliente: req.body.cliente, diaSemana: req.body.diaSemana.toUpperCase(), dataData: req.body.novaData, data: dataFormatada, empresa: req.body.empresa.toUpperCase() }).then(function () {
                 res.redirect("/admin/orcamentos")
             }).catch(function (err) {
                 console.log(err)
@@ -1541,7 +1541,8 @@ router.post("/orcamento/novo", function (req, res) {
                 codCcusto: req.body.codCcusto.toUpperCase(),
                 solicitante: req.body.solicitante.toUpperCase(),
                 refCliente: req.body.refCliente.toUpperCase(),
-                diaSemana: req.body.diaSemana.toUpperCase()
+                diaSemana: req.body.diaSemana.toUpperCase(),
+                empresa: req.body.empresa.toUpperCase()
             }
 
             new OS(novoOrcamento).save().then(function () {

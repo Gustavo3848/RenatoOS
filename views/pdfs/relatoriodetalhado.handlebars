@@ -1,12 +1,12 @@
 <div id='table' name="table">
-    <img id="logo" src="https://live.staticflickr.com/65535/52935712645_e37ec56a8c_h.jpg" alt="refra.png" border="0" />
+    <img id="logo" src="http://localhost:3166/img/22.404.9650001-82.png" alt="refra.png" border="0" />
     <table id="teste">
         <tbody>
             <tr>
                 <th scope="row" colspan="1">Cliente</th>
                 <td colspan="5">{{cliente}}</td>
             </tr>
-                <th scope="row" colspan="6" style="text-align:center;">Serviços {{dataincial}} á {{datafinal}}</th>
+            <th scope="row" colspan="6" style="text-align:center;">Serviços {{dataincial}} á {{datafinal}}</th>
             </tr>
             <tr id="cabe">
                 <th scope="row" colspan="1" style="text-align:center;">nºOS</th>
@@ -27,14 +27,14 @@
             </tr>
             {{/each}}
             <tr>
-                <td colspan="4"id="info">Caso tenha alguma dúvida sobre este orçamento, use as seguintes informações
+                <td colspan="4" id="info">Caso tenha alguma dúvida sobre este orçamento, use as seguintes informações
                     para contato:</td>
-                <th colspan="1"rowspan="2"style="text-align:center;border-rigth: 2px;">Total</th>
-                <td colspan="1"rowspan="2"style="text-align:center;"><b>R$ {{total}}</b></td>
+                <th colspan="1" rowspan="2" style="text-align:center;border-rigth: 2px;">Total</th>
+                <td colspan="1" rowspan="2" style="text-align:center;"><b>R$ {{total}}</b></td>
 
             </tr>
             <tr>
-                <td colspan="4"id="info">Renato de Paula – (43) 99129-1264 / (43) 3156-1054</td>
+                <td colspan="4" id="info">Renato de Paula – (43) 99129-1264 / (43) 3156-1054</td>
             </tr>
         </tbody>
     </table>
@@ -42,7 +42,7 @@
 <style>
     table {
         border-collapse: collapse;
-       
+
     }
 
     table,
@@ -52,15 +52,12 @@
     }
 
     td {
-        
+
         font-size: 8px;
         padding: 1px;
     }
 
-    tr {
-        
-      
-    }
+    tr {}
 
     th {
         font-size: 9px;
@@ -98,19 +95,23 @@
         font-size: 7px;
         text-align: center;
     }
-    #teste{
+
+    #teste {
         table-layout: fixed;
     }
-    #linhasextraservico{
+
+    #linhasextraservico {
         padding: 15px;
     }
-    #cabe{
-        background-color:#3e5190;
+
+    #cabe {
+        background-color: #3e5190;
         color: ivory;
     }
-    #material{
-        background-color:#3e5190;
+
+    #material {
+        background-color: #3e5190;
         color: ivory;
     }
-}
+    }
 </style>

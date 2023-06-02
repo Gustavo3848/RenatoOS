@@ -1,57 +1,60 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const OS = new Schema({
-    
-   
-    data:{
+
+
+    data: {
         type: String
     },
-    dataData:{
+    dataData: {
         type: Date
     },
-    numeroOS:{
+    numeroOS: {
         type: Number,
     },
-    cliente:{
+    cliente: {
         type: Schema.Types.ObjectId,
-        ref:"cliente"
+        ref: "cliente"
     },
-    equipamento:{
+    equipamento: {
         type: String,
     },
-    setor:{
+    setor: {
         type: String
     },
-    cCusto:{
+    cCusto: {
         type: String
     },
-    codCcusto:{
+    codCcusto: {
         type: String
     },
-    solicitante:{
+    solicitante: {
         type: String
     },
-    refCliente:{
+    refCliente: {
         type: String
     },
-    status:{
+    status: {
         type: String,
         default: "PENDENTE"
-    }, 
-    valor:{
+    },
+    valor: {
         type: Number,
-        default:0 
+        default: 0
     },
-    pagamento:{
+    pagamento: {
         type: String,
-        default:"PENDENTE"
+        default: "PENDENTE"
     },
-    diaSemana:{
+    diaSemana: {
         type: String
     },
-    valorString:{
+    valorString: {
+        type: String
+    },
+    empresa: {
         type: String
     }
-    
+
 })
-mongoose.model("os",OS)
+mongoose.model("os", OS)

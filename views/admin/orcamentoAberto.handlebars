@@ -2,6 +2,8 @@
 <div class="card mb-5">
     <div class="card-body">
         <input type="hidden" value="{{_id}}">
+        <label for="numeroOS"><b>Empresa</b></label>
+        <p>{{orcamento.empresa}}</p>
         <label for="numeroOS"><b>Numero OS</b></label>
         <p>{{orcamento.numeroOS}}</p>
         <hr>
@@ -48,12 +50,14 @@
             <tbody>
                 {{#each servicos}}
                 <tr>
-                    <td >{{descricao}}</th>
+                    <td>{{descricao}}</th>
                     <td>{{horas}}</td>
                     <td id="valorHora">R$ {{valorHoraString}}</td>
                     <td>R$ {{valorString}}</td>
-                    <td><a href="/admin/deletarservico/{{_id}}"><button class="btn btn-outline-danger">Excluir</button></a>
-                    <a href="/admin/editarservico/{{_id}}"><button class="btn btn-outline-info">Editar</button></a></td>
+                    <td><a href="/admin/deletarservico/{{_id}}"><button
+                                class="btn btn-outline-danger">Excluir</button></a>
+                        <a href="/admin/editarservico/{{_id}}"><button class="btn btn-outline-info">Editar</button></a>
+                    </td>
                 </tr>
                 {{/each}}
             </tbody>
@@ -63,7 +67,7 @@
             </button></a>
         <hr>
         <label for="materiais" class="mt-2"><b>Materiais</b></label>
-        
+
         <table class="table">
             <thead>
                 <tr>
@@ -76,11 +80,13 @@
             <tbody>
                 {{#each materiais}}
                 <tr>
-                    <td >{{quantidade}}</th>
+                    <td>{{quantidade}}</th>
                     <td>{{nome}}</td>
                     <td>R$ {{valorString}}</td>
-                    <td><a href="/admin/deletarmaterial/{{_id}}"><button class="btn btn-outline-danger">Excluir</button></a>
-                    <a href="/admin/editarmaterial/{{_id}}"><button class="btn btn-outline-info">Editar</button></a></td>
+                    <td><a href="/admin/deletarmaterial/{{_id}}"><button
+                                class="btn btn-outline-danger">Excluir</button></a>
+                        <a href="/admin/editarmaterial/{{_id}}"><button class="btn btn-outline-info">Editar</button></a>
+                    </td>
                 </tr>
                 {{/each}}
             </tbody>
@@ -90,12 +96,18 @@
             </button></a>
         <hr>
         <div class="btn-group" role="group" aria-label="Basic example">
-        <a href="/admin/pdforcamento/{{orcamento._id}}/{{valor}}"><button type="button" class="btn btn-outline-info mr-2">Gerar Orçamento</button></a>
-        <a href="/admin/pdfordeminterna/{{orcamento._id}}"><button type="button" class="btn btn-outline-primary mr-2">Gerar Ordem Interna</button></a>
-        <a href="/admin/gravaros/{{orcamento._id}}/{{valor}}"><button type="button" class="btn btn-outline-success mr-2">Gerar Ordem Final com Valor Hora</button></a>
-        <a href="/admin/gravarossemhora/{{orcamento._id}}/{{valor}}"><button type="button" class="btn btn-outline-success mr-2">Gerar Ordem Final sem Valor Hora</button></a>
-        <a href="/admin/pendente/{{orcamento._id}}"><button type="button" class="btn btn-outline-success mr-2">Tornar Pendente</button></a>
-        <a href="/admin/pagamento/{{orcamento._id}}"><button type="button" class="btn btn-outline-success mr-2">Pagar</button></a>
+            <a href="/admin/pdforcamento/{{orcamento._id}}/{{valor}}"><button type="button"
+                    class="btn btn-outline-info mr-2">Gerar Orçamento</button></a>
+            <a href="/admin/pdfordeminterna/{{orcamento._id}}"><button type="button"
+                    class="btn btn-outline-primary mr-2">Gerar Ordem Interna</button></a>
+            <a href="/admin/gravaros/{{orcamento._id}}/{{valor}}"><button type="button"
+                    class="btn btn-outline-success mr-2">Gerar Ordem Final com Valor Hora</button></a>
+            <a href="/admin/gravarossemhora/{{orcamento._id}}/{{valor}}"><button type="button"
+                    class="btn btn-outline-success mr-2">Gerar Ordem Final sem Valor Hora</button></a>
+            <a href="/admin/pendente/{{orcamento._id}}"><button type="button"
+                    class="btn btn-outline-success mr-2">Tornar Pendente</button></a>
+            <a href="/admin/pagamento/{{orcamento._id}}"><button type="button"
+                    class="btn btn-outline-success mr-2">Pagar</button></a>
         </div>
     </div>
 </div>

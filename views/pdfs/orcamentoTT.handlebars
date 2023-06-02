@@ -1,8 +1,12 @@
 <div id='table' name="table">
-    <img id="logo" src="https://live.staticflickr.com/65535/52935712645_e37ec56a8c_h.jpg" alt="refra.png" border="0" />
+    {{#if orcamento.empresa}}
+    <img id="logo" src="http://localhost:3166/img/{{orcamento.empresa}}.png" alt="refra.png" border="0" />
+    {{else}}
+    <img id="logo" src="http://localhost:3166/img/22.404.9650001-82.png" alt="refra.png" border="0" />
+    {{/if}}
     <table class="table">
         <tbody>
-            <tr  height="5px">
+            <tr height="5px">
                 <th scope="row" colspan="1">Data</th>
                 <td colspan="3">{{orcamento.data}}</td>
             </tr>
@@ -38,8 +42,8 @@
                 <th scope="row" colspan="4" style="text-align:center;">Serviços</th>
             </tr>
             <tr id="cabe">
-                <th scope="row" colspan="3"style="text-align:center;">Descrição dos Serviços</th>
-                <th scope="row" colspan="1" id="valorserv"style="text-align:center;">Valor(R$)</th>
+                <th scope="row" colspan="3" style="text-align:center;">Descrição dos Serviços</th>
+                <th scope="row" colspan="1" id="valorserv" style="text-align:center;">Valor(R$)</th>
             </tr>
             {{#each servicos}}
             <tr>
@@ -65,7 +69,7 @@
                 <td id="valor" style="text-align:center;">{{valorString}}</td>
             </tr>
             {{else}}
-             <tr>
+            <tr>
                 <td style="text-align:center;" id="qtd"></td>
                 <td colspan="2"></td>
                 <td id="valor" style="text-align:center;"></td>
@@ -74,14 +78,14 @@
 
             <tr>
 
-                <td colspan="2"id="info">Caso tenha alguma dúvida sobre este orçamento, use as seguintes informações
+                <td colspan="2" id="info">Caso tenha alguma dúvida sobre este orçamento, use as seguintes informações
                     para contato:</td>
-                <th colspan="1"rowspan="2"style="text-align:center;border-rigth: 2px;">Total</th>
-                <td colspan="1"rowspan="2"style="text-align:center;">{{total}}</td>
+                <th colspan="1" rowspan="2" style="text-align:center;border-rigth: 2px;">Total</th>
+                <td colspan="1" rowspan="2" style="text-align:center;">{{total}}</td>
 
             </tr>
             <tr>
-                <td colspan="2"id="info">Renato de Paula – (43) 99129-1264 / (43) 3156-1054</td>
+                <td colspan="2" id="info">Renato de Paula – (43) 99129-1264 / (43) 3156-1054</td>
             </tr>
         </tbody>
     </table>
@@ -95,7 +99,7 @@
     table,
     th,
     td {
-        
+
         border: 1px solid black;
     }
 
@@ -104,9 +108,7 @@
         font-size: 7px;
     }
 
-    tr {
-        
-    }
+    tr {}
 
     th {
         padding: 1mm;
@@ -122,7 +124,7 @@
     }
 
     #totalhoras {
-        
+
         width: 20%;
     }
 
@@ -144,14 +146,18 @@
         font-size: 7px;
         text-align: center;
     }
-     #cabe{
-        background-color:#3e5190;
+
+    #cabe {
+        background-color: #3e5190;
         color: ivory;
     }
-    #material{
-        background-color:#3e5190;
+
+    #material {
+        background-color: #3e5190;
         color: ivory;
     }
-    .table tr { height: 10px; }
-   
+
+    .table tr {
+        height: 10px;
+    }
 </style>

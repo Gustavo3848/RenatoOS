@@ -1,5 +1,9 @@
 <div id='table' name="table">
-    <img id="logo" src="https://live.staticflickr.com/65535/52935712645_e37ec56a8c_h.jpg" alt="refra.png" border="0" />
+    {{#if orcamento.empresa}}
+    <img id="logo" src="http://localhost:3166/img/{{orcamento.empresa}}.png" alt="refra.png" border="0" />
+    {{else}}
+    <img id="logo" src="http://localhost:3166/img/22.404.9650001-82.png" alt="refra.png" border="0" />
+    {{/if}}
     <table class="table" id="ult">
 
         <tr>

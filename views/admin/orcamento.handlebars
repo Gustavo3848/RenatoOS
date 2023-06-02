@@ -7,13 +7,18 @@
 <div class="card">
     <div class="card-body">
         <form action="/admin/orcamento/novo" method="POST">
+            <label for="empresa">Empresa:</label>
+            <select name="empresa" class="form-control form-control">
+                <option value="22.404.9650001-82">22.404.965/0001-82</option>
+                <option value="46.901.4830001-04">46.901.483/0001-04</option>
+            </select>
             <label for="data">Data:</label>
             <input type="date" id="data" name="data" placeholder="00/00/0000" class="form-control" maxlength="10"
                 onkeyup="maskData()" autocomplete="off">
-            <label for="diaSemana"class="mt-2">Dia da semana</label>
-            <input type="text" name="diaSemana" class="form-control"autocomplete="off">    
-            <label for="cliente"class="mt-2">Cliente:</label>    
-            <select  name="cliente"class="form-control form-control">
+            <label for="diaSemana" class="mt-2">Dia da semana</label>
+            <input type="text" name="diaSemana" class="form-control" autocomplete="off">
+            <label for="cliente" class="mt-2">Cliente:</label>
+            <select name="cliente" class="form-control form-control">
                 {{#each cliente}}
                 <option value="{{_id}}">{{nome}}</option>
                 {{else}}
